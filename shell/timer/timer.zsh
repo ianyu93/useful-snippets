@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 format_time() {
     local total_seconds=$1
@@ -22,10 +22,10 @@ start_time=$(date +%s)
 
 while true; do
     elapsed=$(($(date +%s) - start_time))
-    printf "\r${YELLOW}${BOLD}Elapsed: %s${RESET}" "$(format_time $elapsed)"
+    printf "\r${YELLOW}${BOLD}Elapsed: %s${RESET}" "$(format_time "$elapsed")"
     
     # Check if Enter was pressed (with 1 second timeout)
-    if read -t -r 1; then
+    if read -t 1; then
         break
     fi
 done
